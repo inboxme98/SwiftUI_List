@@ -25,7 +25,7 @@ struct CircleImage: View {
 #if DEBUG
 struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImage(image: landmarkData[0].image(forSize: 250))
+        CircleImage(image: landmarkData[0].image(forSize: 250)).previewLayout(.fixed(width: 250, height: 250))
     }
 }
 #endif
