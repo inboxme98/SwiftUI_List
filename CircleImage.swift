@@ -1,25 +1,31 @@
 //
 //  CircleImage.swift
-//  SwiftUIDemo
+//  SwiftUI_List
 //
 //  Created by Varun Kumar on 01/07/19.
-//  Copyright © 2019 Likeit. All rights reserved.
+//  Copyright © 2019 Apple. All rights reserved.
 //
 
 import SwiftUI
 
-struct CircleImage : View {
+struct CircleImage: View {
+   
+    var image : Image
     var body: some View {
-        Image("turtlerock").clipShape(Circle())
-        .overlay(Circle().stroke(Color.green, lineWidth: 2))
-        .shadow(radius: 10)        
+        
+        
+        image
+            .clipShape(Circle())
+            .overlay(
+                Circle().stroke(Color.white, lineWidth: 4))
+            .shadow(radius: 10)
     }
 }
 
 #if DEBUG
-struct CircleImage_Previews : PreviewProvider {
+struct CircleImage_Previews: PreviewProvider {
     static var previews: some View {
-        CircleImage()
+        CircleImage(image: landmarkData[0].image(forSize: 250))
     }
 }
 #endif
